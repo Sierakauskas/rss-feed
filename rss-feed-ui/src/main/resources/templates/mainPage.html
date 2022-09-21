@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{Layout}">
+<body>
+<section layout:fragment="content-section">
+
+  <div class="container">
+    <!--upload file-->
+
+    <!--search-->
+    <div class="row top-buffer">
+      <div class="col-sm-12 ml-auto"><h5>Search for a photo:</h5></div>
+      <div class="clearfix visible-sm-block"></div>
+    </div>
+
+
+    <form method="post" th:action="@{/results/search=}" enctype="multipart/form-data">
+      <div class="row col-sm-12 col-md-6 col-lg-6">
+        <p>by:</p>
+        <label class="radio col-sm-auto">
+          <input type="radio" name="optradio" value="ID" checked>ID
+        </label>
+        <label class="radio col-sm-auto">
+          <input type="radio" name="optradio" value="File Name">File Name
+        </label>
+        <label class="radio col-sm-auto">
+          <input type="radio" name="optradio" value="Tag">Tag
+        </label>
+        <label class="radio col-sm-auto">
+          <input type="radio" name="optradio" value="Type">Type
+        </label>
+        <label class="radio col-sm-auto">
+          <input type="radio" name="optradio" value="Size">Size
+        </label>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <input class="form-control" type="text" name="searchtext" placeholder="Search" aria-label="Search">
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <input class="btn btn-outline-primary" type="submit" value="Search">
+        </div>
+      </div>
+    </form>
+    <!--search-->
+
+    <div class="row top-buffer">
+      <div class="col-sm-12"><h6>Recently uploaded:</h6></div>
+    </div>
+
+<!--    <table class="table table-responsive" id="table" style="text-align: center">-->
+<!--      <thead class="thead-dark">-->
+<!--      <tr>-->
+<!--        <th scope="col">#</th>-->
+<!--        <th scope="col">File Name</th>-->
+<!--        <th scope="col">Tags</th>-->
+<!--        <th scope="col">Type</th>-->
+<!--        <th scope="col">Size</th>-->
+<!--        <th scope="col">Image</th>-->
+<!--        <th scope="col">Action</th>-->
+<!--      </tr>-->
+<!--      </thead>-->
+<!--      <tbody>-->
+<!--      <tr>-->
+<!--      <tr th:each="user: ${service.getfive()}">-->
+<!--        <td th:text="${user.getImageId()}">vasile</td>-->
+<!--        <td th:text="${user.getImageName()}">45</td>-->
+<!--        <td th:text="${service.getTagName(user.getImageId())}">45</td>-->
+<!--        <td th:text="${user.getImageType()}">45</td>-->
+<!--        <td th:text="${user.getImageSize()}">45</td>-->
+<!--        <td><a th:href="@{'/imageDisplay?id='+${user.getImageId()}}" style="background: white"><img-->
+<!--                th:src="@{'/smallimageDisplay?id='+${user.getImageId()}}" height="100"/></a></td>-->
+<!--        <td>-->
+<!--          <form th:action="@{/edit}" th:value="${user.getImageId()}">-->
+<!--            <button class="btn btn-outline-primary" type="submit" name="edit"-->
+<!--                    th:value="${user.getImageId()}">-->
+<!--              <div sec:authorize="isAuthenticated()"><span>Edit</span></div>-->
+<!--              <div sec:authorize="!isAuthenticated()"><span>View</span></div>-->
+<!--            </button>-->
+<!--          </form>-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--      </tbody>-->
+<!--    </table>-->
+  </div>
+</section>
+
+</body>
+</html>
