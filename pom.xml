@@ -21,6 +21,42 @@
     <module>rss-feed-ui</module>
   </modules>
 
+  <properties>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    <commons.collections4.version>4.4</commons.collections4.version>
+    <lombok.version>1.18.12</lombok.version>
+    <rome.version>1.0</rome.version>
+    <webjars.locator.version>0.36</webjars.locator.version>
+    <webjars.bootstrap.version>4.2.1</webjars.bootstrap.version>
+    <thymeleaf-layout.version>3.1.0</thymeleaf-layout.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>lt.rss.feed</groupId>
+        <artifactId>rss-feed-model</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>lt.rss.feed</groupId>
+        <artifactId>rss-feed-bl</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-collections4</artifactId>
+        <version>${commons.collections4.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>rome</groupId>
+        <artifactId>rome</artifactId>
+        <version>${rome.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -28,17 +64,17 @@
       <optional>true</optional>
       <scope>runtime</scope>
     </dependency>
-
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <optional>true</optional>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
+      <version>${commons.collections4.version}</version>
     </dependency>
   </dependencies>
-
-  <properties>
-    <maven.compiler.source>8</maven.compiler.source>
-    <maven.compiler.target>8</maven.compiler.target>
-  </properties>
 
 </project>

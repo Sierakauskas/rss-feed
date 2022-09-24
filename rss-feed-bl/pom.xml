@@ -10,6 +10,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>rss-feed-bl</artifactId>
+  <packaging>jar</packaging>
 
   <properties>
     <maven.compiler.source>8</maven.compiler.source>
@@ -20,7 +21,6 @@
     <dependency>
       <groupId>lt.rss.feed</groupId>
       <artifactId>rss-feed-model</artifactId>
-      <version>${project.version}</version>
     </dependency>
 
     <!--Mysql database-->
@@ -33,6 +33,11 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>rome</groupId>
+      <artifactId>rome</artifactId>
     </dependency>
   </dependencies>
 

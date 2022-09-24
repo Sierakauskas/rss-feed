@@ -1,6 +1,5 @@
 package lt.rss.feed.model.dto;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import lombok.AccessLevel;
@@ -17,11 +16,12 @@ import lombok.experimental.FieldNameConstants;
 @FieldNameConstants
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class Feed {
+public class FeedViewItem {
     private Long id;
-    private LocalDateTime lastUpdateDateTime;
+    private String lastUpdateDateTime;
     private String url;
     private String title;
     private String feedName;
-    private List<Item> items;
+    private Long itemCount;
+    private List<ItemListItem> items;
 }

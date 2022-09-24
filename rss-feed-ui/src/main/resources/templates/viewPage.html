@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css">
+</head>
+<body>
+<div class="container">
+  <div class="row mb10">
+    <div class="col-12">
+      <h3 class="mb0">XML RSS Feed</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <span>Feed name:</span>
+      <span th:text="${feed.feedName}"></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <span>Url address:</span>
+      <span th:text="${feed.url}"></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <span>Update time and date:</span>
+      <span th:text="${feed.lastUpdateDateTime}"></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <span>Article count:</span>
+      <span th:text="${feed.itemCount}"></span>
+    </div>
+  </div>
+  <table>
+    <th:block th:each="item : ${feed.items}">
+      <tr>
+        <td>
+          <a th:href="${item.link}" th:text="${item.title}" target="_blank"></a>
+        </td>
+      </tr>
+    </th:block>
+  </table>
+</div>
+</body>
+</html>

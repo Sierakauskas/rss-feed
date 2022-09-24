@@ -27,7 +27,7 @@ import lombok.experimental.FieldNameConstants;
 
 @Entity
 @Table(name = "FEEDS")
-@Builder
+@Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @FieldNameConstants
@@ -46,7 +46,7 @@ public class FeedEntity {
     @Column(name = "URL", length = 255)
     private String url;
 
-    @Column(name = "URL", length = 45)
+    @Column(name = "TITLE", length = 45)
     private String title;
 
     @Column(name = "FEED_NAME", length = 255)

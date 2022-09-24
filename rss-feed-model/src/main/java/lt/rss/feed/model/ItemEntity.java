@@ -12,8 +12,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.CreationTimestamp;
-
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -40,7 +38,6 @@ public class ItemEntity {
     @JoinColumn(name = "FEED_ID", nullable = false)
     private FeedEntity feed;
 
-    @CreationTimestamp
     @Column(name = "PUBLISHED")
     private LocalDateTime publishedDateTime;
 
