@@ -96,6 +96,7 @@ public class FeedService {
                 .orElse(new FeedEntity());
 
         feedEntity = feedRepository.save(feedEntity.toBuilder()
+                .lastUpdateDateTime(LocalDateTime.now())
                 .url(syndFeed.getLink())
                 .title(syndFeed.getTitle())
                 .feedName(feedName)

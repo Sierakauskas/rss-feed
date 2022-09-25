@@ -15,8 +15,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.UpdateTimestamp;
-
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -39,7 +37,6 @@ public class FeedEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @UpdateTimestamp
     @Column(name = "LAST_UPDATE")
     private LocalDateTime lastUpdateDateTime;
 
