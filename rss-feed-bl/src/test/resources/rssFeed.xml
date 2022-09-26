@@ -1,0 +1,35 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Test feed title</title>
+    <link>http://localhost:8080/rss</link>
+    <atom:link href="http://localhost:8080/rss" rel="self" type="application/rss+xml"/>
+    <description>
+      <![CDATA[ Test feed ]]>
+    </description>
+    <language>lt-lt</language>
+    <copyright>Copyright © 2022, testFeed.com</copyright>
+    <pubDate>Mon, 26 Sep 2022 10:11:40 +0300</pubDate>
+    <lastBuildDate>Mon, 26 Sep 2022 10:11:40 +0300</lastBuildDate>
+    <generator>Test XML Generator</generator>
+    <managingEditor/>
+    <webMaster/>
+    <item>
+      <title>First feed item title</title>
+      <link>http://localhost:8080/first-item</link>
+      <description>First item description</description>
+      <author>Test User</author>
+      <category>Lietuva</category>
+      <pubDate>Mon, 26 Sep 2022 10:01:00 +0300</pubDate>
+      <guid>http://localhost:8080/first-item?source=rssfeed</guid>
+    </item>
+    <item>
+      <title>Second feed item title</title>
+      <link>http://localhost:8080/second-item</link>
+      <description>Second item description</description>
+      <author>Test User</author>
+      <category>Lietuva</category>
+      <pubDate>Mon, 26 Sep 2022 09:56:00 +0300</pubDate>
+      <guid>http://localhost:8080/second-item?source=rssfeed</guid>
+    </item>
+  </channel>
+</rss>

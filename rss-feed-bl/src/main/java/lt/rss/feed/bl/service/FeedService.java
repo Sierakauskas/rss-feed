@@ -16,7 +16,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.sun.syndication.feed.synd.SyndEntryImpl;
+import com.sun.syndication.feed.synd.SyndEntry;
 import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.io.SyndFeedInput;
 import com.sun.syndication.io.XmlReader;
@@ -40,7 +40,7 @@ import lt.rss.feed.model.dto.ItemListItem;
 @RequiredArgsConstructor
 public class FeedService {
 
-    private static final int ITEM_LIST_ELEMENT_COUNT = 5;
+    public static final int ITEM_LIST_ELEMENT_COUNT = 5;
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
     private final FeedRepository feedRepository;
@@ -105,14 +105,14 @@ public class FeedService {
         if (CollectionUtils.isNotEmpty(syndFeed.getEntries())) {
             List<ItemEntity> itemEntities = new ArrayList<>();
             for (Object entry : syndFeed.getEntries()) {
-                itemEntities.add(buildItemEntity((SyndEntryImpl) entry, feedEntity));
+                itemEntities.add(buildItemEntity((SyndEntry) entry, feedEntity));
             }
             itemRepository.saveAll(itemEntities);
         }
         return feedEntity.getId();
     }
 
-    private ItemEntity buildItemEntity(SyndEntryImpl syndEntry, FeedEntity feed) {
+    private ItemEntity buildItemEntity(SyndEntry syndEntry, FeedEntity feed) {
         return ItemEntity.builder()
                 .feed(feed)
                 .title(syndEntry.getTitle())

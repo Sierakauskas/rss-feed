@@ -31,6 +31,7 @@
     <webjars.locator.version>0.36</webjars.locator.version>
     <webjars.bootstrap.version>4.2.1</webjars.bootstrap.version>
     <thymeleaf-layout.version>3.1.0</thymeleaf-layout.version>
+    <wiremock-jre8.version>2.34.0</wiremock-jre8.version>
   </properties>
 
   <dependencyManagement>
@@ -49,6 +50,11 @@
         <groupId>rome</groupId>
         <artifactId>rome</artifactId>
         <version>${rome.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.tomakehurst</groupId>
+        <artifactId>wiremock-jre8</artifactId>
+        <version>${wiremock-jre8.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
