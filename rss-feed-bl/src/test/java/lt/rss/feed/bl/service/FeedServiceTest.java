@@ -141,7 +141,7 @@ class FeedServiceTest {
     }
 
     @Test
-    void getFeedViewItemShouldThrowException() {
+    void getFeedViewItemShouldReturnViewItem() {
         FeedEntity mockedFeedEntity = mock(FeedEntity.class);
         when(mockedFeedEntity.getId())
                 .thenReturn(ID);
@@ -197,8 +197,7 @@ class FeedServiceTest {
     }
 
     @Test
-    void getFeedViewItemShouldReturnViewItem() {
-
+    void getFeedViewItemShouldThrowException() {
         when(feedRepository.findById(ID))
                 .thenReturn(Optional.empty());
 
